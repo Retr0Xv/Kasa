@@ -14,6 +14,7 @@ function App() {
       
       <main>
     <BrowserRouter>
+      <Header/>
       <Routes>
         <Route path={'/'} element={<Home/>}></Route>
         <Route path="/about" element={<About />} />
@@ -21,6 +22,7 @@ function App() {
         <Route path={'/404'} element={<Error/>}></Route>
         <Route path="*" element={<Navigate to="/404"/>}></Route>
       </Routes>
+      <Footer/>
     </BrowserRouter>
     </main>
     
