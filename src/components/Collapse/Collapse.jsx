@@ -13,7 +13,7 @@ export default function Collapse(props) {
 	const refHeight = useRef(); 
 
 	useEffect(() => {
-		setHeightEl(`${refHeight.current.scrollHeight}px`); 
+		setHeightEl(toggle ? `${refHeight.current.scrollHeight}px` : 'auto');
 	}, []);
 
 	return (
