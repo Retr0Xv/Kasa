@@ -2,10 +2,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 5%;
+	margin: 5% 0%;
 
 	@media screen and (min-width: $breakpoint-desktop) {
-		margin: 40px 100px 49px 100px;
+		margin: 40px 0px 49px 0px;
 	}
 
 	&__fig {

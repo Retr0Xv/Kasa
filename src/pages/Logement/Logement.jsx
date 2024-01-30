@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Collapse from "../../components/Collapse/Collapse";
 import Host from "../../components/Host/Host";
@@ -11,9 +12,11 @@ export default function FicheLogement() {
 	const navigate = useNavigate();
 	const picked = res.find(({ id }) => id === params.id);
 
-	if (picked === undefined) {
-		navigate("/404", { state: { message: "Can't get data" } });
-	}
+	useEffect(() => {
+		if (!picked) {
+		  navigate("/404", { state: { message: "Can't get data" } });
+		}
+	  }, [params.id, picked, navigate]);
 
 	const slidePics = picked && picked.pictures;
 	const tags = picked && picked.tags;
